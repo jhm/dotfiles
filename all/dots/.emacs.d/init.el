@@ -10,6 +10,9 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
+;; Show traces for all tramp messages.
+(setq tramp-verbose 10)
+
 (defvar my-packages
   '(powerline
     ;; Themes
@@ -59,26 +62,33 @@
     smex
     yasnippet
     zencoding-mode)
-  "A list of packages to ensure are installed at launch.")
+  "Packages to ensure are installed at launch.")
+
+;; Directory that stores my customization files.
+(setq config-dir (file-truename (concat user-emacs-directory "config/")))
+
+;; Where machine specific customization information is stored
+;; (custom-set-variables, custom-set-faces etc.).
+(setq custom-file (concat config-dir "custom.el"))
+
+(defvar configs
+  `("global"
+    "functions"
+    "git"
+    "haskell"
+    "js"
+    "lisp"
+    "python")
+  "Customization files that will be loaded at launch.")
 
 ;; Install any missing packages.
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
-;; Show traces for all tramp messages.
-(setq tramp-verbose 10)
-
-;; Directory that stores my customization files.
-(setq custom-dir (file-truename (concat user-emacs-directory "config")))
-
-;; Where customization information is stored (custom-set-variables,
-;; custom-set-faces etc.).
-(setq custom-file (concat custom-dir "custom.el"))
-
 ;; Load my customizations.
-(dolist (path (directory-files custom-dir t "\\.el$"))
-  (load path))
+(dolist (config configs)
+  (load (concat config-dir config ".el")))
 
 ;; Fix path issues.
 (defun set-exec-path-from-shell-PATH ()
