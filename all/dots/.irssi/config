@@ -1,5 +1,10 @@
 # Irssi config.
 #
+# This is primarily just the default irssi config with a few minor 
+# tweaks. You'll want to change the nick, real_name and 
+# user_name settings below and setup auto identify and nick 
+# highlighting.
+#
 # To have irssi auto identify when you join a specific server you can
 # add the following to the chatnet config:
 #
@@ -24,30 +29,14 @@ servers = (
   { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
-  { 
-    address = "irc.undernet.org";
-    chatnet = "Undernet";
-    port = "6667";
-  },
+  { address = "irc.undernet.org"; chatnet = "Undernet"; port = "6667"; },
   { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
-  { 
-    address = "irc.quakenet.org";
-    chatnet = "QuakeNet";
-    port = "6667";
-  },
+  { address = "irc.quakenet.org"; chatnet = "QuakeNet"; port = "6667"; },
   { address = "irc.oftc.net"; chatnet = "OFTC"; port = "6667"; },
-  {
-    address = "irc.gamesurge.net";
-    chatnet = "GameSurge";
-    port = "6667";
-  },
+  { address = "irc.gamesurge.net"; chatnet = "GameSurge"; port = "6667"; },
   { address = "irc.webchat.org"; chatnet = "WebChat"; port = "6667"; },
   { address = "irc.rizon.net"; chatnet = "Rizon"; port = "6667"; },
-  { 
-    address = "irc.freenode.net";
-    chatnet = "Freenode";
-    port = "6667";
-  },
+  { address = "irc.freenode.net"; chatnet = "Freenode"; port = "6667"; },
   { address = "irc.link-net.org"; chatnet = "LinkNet"; port = "6667"; },
   { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; }
 );
@@ -285,10 +274,8 @@ statusbar = {
   };
 };
 
-
-
 settings = {
-  core = { real_name = "John"; user_name = "john"; nick = "john"; };
+  core = { real_name = ""; user_name = ""; nick = ""; };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = {
     theme = "default";
