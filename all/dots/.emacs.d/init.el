@@ -30,7 +30,6 @@
     markdown-mode
     yaml-mode
     ;; Haskell
-    flymake-haskell
     flymake-hlint
     haskell-mode
     ghci-completion
@@ -60,6 +59,7 @@
     popup
     rainbow-mode
     smex
+    sr-speedbar
     yasnippet
     zencoding-mode)
   "Packages to ensure are installed at launch.")
