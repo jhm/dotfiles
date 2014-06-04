@@ -11,7 +11,7 @@
 #   nick = "NICKNAME";
 #   autosendcmd = "/msg nickserv identify PASSWORD ; wait 2000";
 #
-# Also you may want to highlight of certain words (nick, website
+# Also you may want to highlight certain words (nick, website
 # address etc.):
 #
 #   hilights = (
