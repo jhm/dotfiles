@@ -1,0 +1,16 @@
+[user]
+	email = code@johnmajor.ca
+	name = John Major
+[diff]
+[color]
+    ui = auto
+[alias]
+    br = branch
+    c = commit
+    ca = commit -a
+    cm = commit -m
+    co = checkout
+    d = diff
+    fo = fetch origin
+    po = push origin
+    st = status
