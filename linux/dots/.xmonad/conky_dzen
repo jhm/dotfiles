@@ -1,0 +1,8 @@
+background yes
+out_to_console yes
+out_to_x no
+
+update_interval 1
+
+TEXT
+^fg(\#444444) ^i(/home/john/.xmonad/icons/sm4tik/net_down_03.xbm) ${downspeed wlp3s0}  ^i(/home/john/.xmonad/icons/sm4tik/net_up_03.xbm) ${upspeed wlp3s0}  ^i(/home/john/.xmonad/icons/sm4tik/cpu.xbm) ${cpu}%  ^i(/home/john/.xmonad/icons/sm4tik/mem.xbm) ${memperc}%  ^i(/home/john/.xmonad/icons/sm4tik/clock.xbm) ${time %d-%m-%y %R%p}
