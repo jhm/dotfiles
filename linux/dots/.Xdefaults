@@ -1,0 +1,35 @@
+#include ".colors/zenburn"
+
+Xft.autohint:            0
+Xft.lcdfilter:           lcddefault
+Xft.hintstyle:           hintslight
+Xft.hinting:             1
+Xft.antialias:           1
+Xft.dpi:                 96
+Xft.rgba:                rgb
+
+urxvt.xftAutoHint:       true
+urxvt.termName:          rxvt
+urxvt.imLocale:          en_US.UTF-8
+urxvt.loginShell:        true
+urxvt.saveLines:         1000
+urxvt.letterSpace:       -1
+
+urxvt.font:              xft:DejaVu Sans Mono:pixelsize=13
+urxvt.inheritPixmap:     false
+urxvt.shading:           40
+urxvt.fading:            0
+urxvt.jumpScroll:        true
+urxvt.tintColor:         black
+urxvt.cursorBlink:       false
+urxvt.cursorColor:       #000000
+urxvt.cursorColor2:      #FFFFFF
+urxvt.colorBD:           #CCCCCC
+urxvt.colorIT:           #DDDDDD
+urxvt.colorUL:           #999999
+urxvt.underlineColor:    #CCCCCC
+urxvt.scrollBar:         false
+urxvt.perl-ext:          matcher
+urxvt.urlLauncher:       firefox
+urxvt.matcher.button:    1
+urxvt.iso14755_52:       false
