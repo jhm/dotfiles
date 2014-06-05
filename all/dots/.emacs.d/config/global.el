@@ -86,6 +86,8 @@
 (define-key global-map (kbd "C-+") 'text-scale-increase)
 (define-key global-map (kbd "C--") 'text-scale-decrease)
 
+(global-set-key (kbd "C-c c m") 'comment-or-uncomment-region)
+
 ; Use regex searches
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "\C-r") 'isearch-backward-regexp)
