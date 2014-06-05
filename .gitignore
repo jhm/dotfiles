@@ -1,0 +1,8 @@
+*.elc
+all/dots/.emacs.d/.smex-items
+all/dots/.emacs.d/ac-comphist.dat
+all/dots/.emacs.d/auto-save-list
+all/dots/.emacs.d/backups
+all/dots/.emacs.d/config/custom.el
+all/dots/.emacs.d/elpa
+all/dots/.emacs.d/eshell
