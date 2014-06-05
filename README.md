@@ -29,6 +29,15 @@ theme. Alternatively, you can download the theme I use
 [here](https://gist.github.com/jhm/57e80b366ee4dc9cb70e) and place it
 in ~/.oh-my-zsh/themes/jhm.zsh-theme.
 
+You'll also want to edit the `~/.irssi/config` to setup your IRC
+details. Once you've done so, it's a good idea to ignore future
+changes on the irssi config file so that your connection details are
+never accidentally uploaded to a public repository.
+
+```sh
+git update-index --assume-unchanged ./irssi/config
+```
+
 ## File Layout
 
 - `all` - Platform independent files.
