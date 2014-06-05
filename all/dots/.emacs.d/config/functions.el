@@ -50,7 +50,7 @@
 (defun my-zenburn ()
   "Load a customized version of zenburn."
   (interactive)
-  (load-theme 'zenburn)
+  (load-theme 'zenburn t)
   (set-background-color "#313335") ;; #313335  #271f1f
   (set-face-background 'fringe "#2e3031")
 

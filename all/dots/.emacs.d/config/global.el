@@ -4,8 +4,16 @@
 (global-hl-line-mode)
 (setenv "PAGER" "cat")
 
-(setq inhibit-startup-screen t)
-(setq inhibit-startup-echo-area-message t)
+(custom-set-variables
+ '(auto-save-file-name-transforms
+   `((".*" ,(expand-file-name "~/.emacs.d/backups") t)))
+ '(backup-directory-alist
+    `((".*" . ,(expand-file-name "~/.emacs.d/backups"))))
+ '(inhibit-startup-screen t)
+ '(inhibit-startup-echo-area-message t)
+ '(save-place-file "~/.emacs.d/places")
+ '(sentence-end-double-space nil)
+ '(show-paren-mode t))
 
 (when window-system
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
@@ -54,7 +62,7 @@
 (powerline-vim-theme)
 
 ;; Theme
-(load-theme 'solarized-light)
+(load-theme 'solarized-light t)
 ;; (my-zenburn)
 
 ;; Ido
