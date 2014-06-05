@@ -24,10 +24,10 @@ Run the install script:
 This will symlink all the appropriate files and directories in `~` and
 `~/bin`.
 
-You'll then have to edit ~/.zshrc and select a zsh
+You'll then have to edit `~/.zshrc` and select a zsh
 theme. Alternatively, you can download the theme I use
 [here](https://gist.github.com/jhm/57e80b366ee4dc9cb70e) and place it
-in ~/.oh-my-zsh/themes/jhm.zsh-theme.
+in `~/.oh-my-zsh/themes/jhm.zsh-theme`.
 
 ## File Layout
 
