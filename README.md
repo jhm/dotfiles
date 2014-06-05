@@ -39,3 +39,9 @@ Each of the above sub-directories has a `bin` and a `dots` directory
 that will be linked depending on the current platform. By default, all
 of the files in the `bin` directory will be linked in `~/bin` and
 all of the files in the `dots` directory will be linked in `~`.
+
+
+## Inspiration
+
+Largely inspired by [Zach Holman's dotfiles](https://github.com/holman/dotfiles) 
+and a desire to rid myself of a decades worth of unorganized cruft.
