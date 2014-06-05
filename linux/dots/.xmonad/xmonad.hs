@@ -75,7 +75,7 @@ myLogHook h = dynamicLogWithPP $ defaultPP
   }
 
 ------------------------------------------------------------------------------
-myWorkspaces = map (\icon -> "^i(~/.xmonad/icons/sm4tik/" ++ icon ++ ")")
+myWorkspaces = map (\icon -> "^i(/home/john/.xmonad/icons/sm4tik/" ++ icon ++ ")")
   [ "diskette.xbm"
   , "ac.xbm"
   , "fox.xbm"
