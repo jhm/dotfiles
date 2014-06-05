@@ -11,9 +11,6 @@ alias scala="scala -cp /home/john/.ivy2/cache/org.scalaz/scalaz-core_2.10/jars/s
 # Disable auto-setting the terminal title.
 DISABLE_AUTO_TITLE="true"
 
-# Display red dots while waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
 # Enabled plugins.
 plugins=(cabal git python)
 
