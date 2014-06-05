@@ -45,3 +45,7 @@ all of the files in the `dots` directory will be linked in `~`.
 
 Largely inspired by [Zach Holman's dotfiles](https://github.com/holman/dotfiles) 
 and a desire to rid myself of a decades worth of unorganized cruft.
+
+## License
+
+MIT. See [LICENSE.txt](https://github.com/jhm/dotfiles/blob/master/LICENSE.txt).
