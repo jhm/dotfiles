@@ -51,7 +51,7 @@
   "Load a customized version of zenburn."
   (interactive)
   (load-theme 'zenburn t)
-  (set-background-color "#313335") ;; #313335  #271f1f
+  (set-background-color "#313335")
   (set-face-background 'fringe "#2e3031")
 
   (set-face-attribute 'linum nil :background "#2f2f2f")
