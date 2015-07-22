@@ -21,9 +21,12 @@
     zenburn-theme
     ;; VCS
     magit
+    ;; Elixir
+    elixir-mode
+    elixir-yasnippets
+    alchemist
     ;; Clojure
     clojure-mode
-    clojure-test-mode
     cider
     ac-nrepl
     ;; Markup
@@ -56,12 +59,12 @@
     ack
     idle-highlight-mode
     ido-ubiquitous
+    neotree
     popup
     rainbow-mode
     smex
     sr-speedbar
-    yasnippet
-    zencoding-mode)
+    yasnippet)
   "Packages to ensure are installed at launch.")
 
 ;; Directory that stores my customization files.
