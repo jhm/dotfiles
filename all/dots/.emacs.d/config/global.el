@@ -62,9 +62,7 @@
 (powerline-vim-theme)
 
 ;; Theme
-;;(load-theme 'solarized-light t)
-(load-theme 'leuven)
-;; (my-zenburn)
+(load-theme 'twilight)
 
 ;; Ido
 (ido-mode t)
