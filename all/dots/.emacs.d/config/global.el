@@ -76,6 +76,9 @@
       ido-handle-duplicate-virtual-buffers 2
       ido-max-prospects 10)
 
+;; Add syntax highlighting for code blocks in org-mode
+(setq org-src-fontify-natively t)
+
 ;; Smex
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
 (smex-initialize)
