@@ -77,7 +77,6 @@
 (defvar configs
   `("global"
     "functions"
-    "git"
     "haskell"
     "js"
     "lisp"
