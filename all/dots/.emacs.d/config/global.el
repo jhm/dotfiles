@@ -70,6 +70,8 @@
       company-idle-delay .1
       company-selection-wrap-around t)
 
+(require 'alchemist)
+
 ;; Ido
 (ido-mode t)
 (ido-ubiquitous t)
