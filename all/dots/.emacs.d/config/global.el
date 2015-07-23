@@ -54,7 +54,7 @@
 (setq sr-speedbar-right-side nil
       sr-speedbar-skip-other-window-p t)
 
-; Disable linum for speedbar.
+;; Disable linum for speedbar.
 (add-hook 'speedbar-mode-hook '(lambda () (linum-mode 0)))
 
 ;; Powerline
@@ -63,6 +63,12 @@
 
 ;; Theme
 (load-theme 'twilight)
+
+;; Autocomplete
+(global-company-mode t)
+(setq company-tooltip 12
+      company-idle-delay .1
+      company-selection-wrap-around t)
 
 ;; Ido
 (ido-mode t)
