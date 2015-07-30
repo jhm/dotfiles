@@ -51,22 +51,26 @@
   "Load a customized version of zenburn."
   (interactive)
   (load-theme 'zenburn t)
-  (set-background-color "#313335")
-  (set-face-background 'fringe "#2e3031")
-
-  (set-face-attribute 'linum nil :background "#2f2f2f")
-  (set-face-attribute 'linum nil :foreground "#4a4a4a")
-
-  (set-face-attribute 'font-lock-comment-delimiter-face nil
-                      :italic t)
-
-  (set-face-attribute 'font-lock-comment-face nil
-                      :italic t)
+  (set-fringe-style '(8 . 0))
+  (set-background-color "#222")
+  (set-face-background 'fringe "#1a1a1a")
 
   (set-face-attribute 'mode-line nil
-    :foreground "gray60" :background "#313131"
-    :box '(:line-width 1 :color "#2f2f2f" :style nil))
+    :foreground "999999" :background "#000000" :box nil)
 
   (set-face-attribute 'mode-line-inactive nil
-    :foreground "gray60" :background "#373737"
-    :box '(:line-width 1 :color "#373737" :style nil)))
+    :foreground "#444444" :background "#1a1a1a" :box nil))
+
+(defun my-default-theme ()
+ "Slightly modifies the default theme."
+ (interactive)
+ (set-background-color "#fafafa")
+ (set-face-background 'fringe "#f2f2f2")
+
+ (set-fringe-style '(8 . 0))
+
+ (set-face-attribute 'mode-line nil
+    :foreground "#ccc" :background "#000000" :box nil)
+
+  (set-face-attribute 'mode-line-inactive nil
+    :foreground "#333" :background "#f2f2f2" :box nil))
