@@ -61,9 +61,6 @@
 (require 'powerline)
 (powerline-vim-theme)
 
-;; Theme
-(load-theme 'twilight)
-
 ;; Autocomplete
 (global-company-mode t)
 (setq company-tooltip 12
