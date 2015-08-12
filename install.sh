@@ -8,7 +8,7 @@ set -o pipefail
 
 readonly DOTFILES_ROOT="$(pwd)"
 readonly DOT_DIR="$HOME"
-readonly BIN_DIR="$HOME/bin"
+readonly BIN_DIR="$HOME/.bin"
 
 overwrite_all=false
 skip_all=false
@@ -88,7 +88,7 @@ link_dotfiles () {
 link_bins () {
     target="$1"
 
-    [[ -d "$HOME/bin" ]] || mkdir "$HOME/bin"
+    [[ -d "$BIN_DIR" ]] || mkdir "$BIN_DIR"
 
     for source in $(find "$target" -mindepth 1 -maxdepth 1); do
         target="$BIN_DIR/$(basename $source)"
@@ -107,12 +107,12 @@ if [[ "$dist" == "Darwin" ]]; then
     info "Linking OS X dotfiles"
     link_dotfiles "$DOTFILES_ROOT/osx/dots"
 
-    info "Linking OS X ~/bin files"
+    info "Linking OS X executable files"
     link_bins "$DOTFILES_ROOT/osx/bin"
 elif [[ "$dist" == "Linux" ]]; then
     info "Linking Linux dotfiles"
     link_dotfiles "$DOTFILES_ROOT/linux/dots"
 
-    info "Linking Linux ~/bin files"
+    info "Linking Linux executable files"
     link_dotfiles "$DOTFILES_ROOT/linux/bin"
 fi
