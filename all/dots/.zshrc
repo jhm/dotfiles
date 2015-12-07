@@ -19,4 +19,4 @@ source $ZSH/oh-my-zsh.sh
 # User configuration.
 export EDITOR=emacs
 
-export PATH=$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin
+export PATH=$HOME/.bin:$HOME/.pub-cache/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin
