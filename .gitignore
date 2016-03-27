@@ -6,3 +6,7 @@ all/dots/.emacs.d/backups
 all/dots/.emacs.d/config/*.el
 all/dots/.emacs.d/elpa
 all/dots/.emacs.d/eshell
+all/dots/.emacs.d/ido.last
+all/dots/.emacs.d/places
+all/dots/.emacs.d/projectile*
+all/dots/.emacs.d/recentf
