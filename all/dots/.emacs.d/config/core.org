@@ -95,7 +95,7 @@ the rest of the customization files.
       (when (not (package-installed-p p))
         (package-install p)))
   #+END_SRC
-
+  
 * Configuration
 
 Load the remaining configuration files.

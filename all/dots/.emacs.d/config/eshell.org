@@ -1,8 +1,6 @@
 #+TITLE: Eshell Configuration
 #+OPTIONS: toc:nil num:nil ^:nil
 
-[[http://www.emacswiki.org/emacs/CategoryEshell][* Eshell]] Configuration
-
 #+BEGIN_SRC emacs-lisp
   (setq eshell-save-history-on-exit t
         eshell-cmpl-dir-ignore "\\`\\(\\.\\.?\\|CVS\\|\\.svn\\|\\.git\\)/\\'")

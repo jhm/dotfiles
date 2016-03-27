@@ -1,11 +1,9 @@
 #+TITLE: Javascript Configuration
 #+OPTIONS: toc:nil num:nil ^:nil
 
-* Javascript Configuration
-
 Configure modes for editing Javascript and JSON.
 
-** Enable and autoload js2 mode for .js and .json files.
+* Enable and autoload js2 mode for .js and .json files.
 #+BEGIN_SRC emacs-lisp
   (require 'js2-mode)
   (autoload 'js2-mode "js2" nil t)
@@ -13,14 +11,14 @@ Configure modes for editing Javascript and JSON.
   (add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
 #+END_SRC
 
-** Enable jsx-mode for .jsx files.
+* Enable jsx-mode for .jsx files.
 #+BEGIN_SRC emacs-lisp
   (require 'jsx-mode)
   (add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . jsx-mode))
   (setq jsx-indent-level 2)
 #+END_SRC
 
-** Setup js-comint mode for a javascript repl.
+* Setup js-comint mode for a javascript repl.
 #+BEGIN_SRC emacs-lisp
   (require 'js-comint)
   (setq inferior-js-program-command "/usr/bin/js")
@@ -33,7 +31,7 @@ Configure modes for editing Javascript and JSON.
                (local-set-key "\C-cl" 'js-load-file-and-go)))
 #+END_SRC
 
-** Fix node repl.
+* Fix node repl.
 #+BEGIN_SRC emacs-lisp
   (setenv "NODE_NO_READLINE" "1")
 #+END_SRC

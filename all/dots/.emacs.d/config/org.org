@@ -3,7 +3,7 @@
 
 Configure org-mode.
 
-** Code blocks
+* Code blocks
 #+BEGIN_SRC emacs-lisp
   (setq org-src-fontify-natively t)
 ;;  (setq org-src-tab-acts-natively nil)

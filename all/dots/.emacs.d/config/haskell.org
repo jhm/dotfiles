@@ -1,8 +1,6 @@
 #+TITLE: Haskell Configuration
 #+OPTIONS: toc:nil num:nil ^:nil
 
-* Haskell Configuration
-
 Configure modes for editing Haskell.
 
 #+BEGIN_SRC emacs-lisp

@@ -1,8 +1,6 @@
 #+TITLE: Yasnippet Configuration
 #+OPTIONS: toc: nil num:nil ^:nil
 
-* Yasnippet Configuration
-
 #+BEGIN_SRC emacs-lisp
   (yas-global-mode 1)
 #+END_SRC
