@@ -20,3 +20,15 @@
     "Change directory to the project's root."
     (eshell/cd (projectile-project-root)))
 #+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+  (defun eshell/clear ()
+    "Clear the eshell buffer."
+    (interactive)
+    (let ((inhibit-read-only t))
+      (erase-buffer)
+      (eshell-send-input)))
+  (add-hook 'eshell-mode-hook
+        '(lambda()
+            (local-set-key (kbd "C-l") 'eshell/clear)))
+#+END_SRC
