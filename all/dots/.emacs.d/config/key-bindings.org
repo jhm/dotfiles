@@ -1,4 +1,4 @@
-#+TITLE: Emacs Key bindings
+#+TITLE: Key bindings
 #+OPTIONS: toc:nil num:nil ^:nil
 
 * Comments
