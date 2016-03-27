@@ -2,7 +2,6 @@
 (setq tramp-verbose 10)
 
 (setq config-dir (file-truename (concat user-emacs-directory "config/")))
-;;(add-to-list 'load-path config-dir)
 
 ;; Where machine specific customization information is stored
 ;; (custom-set-variables, custom-set-faces etc.).
