@@ -5,6 +5,7 @@ Registers to quickly jump to various files using C-x r j.
 
 #+BEGIN_SRC emacs-lisp
   (set-register ?e '(file . "~/.emacs.d/config/core.org"))
+  (set-register ?c '(file . "~/Notes/emacs.org"))
   (set-register ?n '(file . "~/Notes/main.org"))
   (set-register ?q '(file . "~/Notes/quotes.org"))
 #+END_SRC
