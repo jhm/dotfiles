@@ -1,0 +1,151 @@
+#+TITLE: Core Configuration
+#+OPTIONS: toc:2 num:nil ^:nil
+
+* Structure
+
+The =~/.emacs.d/init.el= file is loaded by Emacs at startup and loads
+the elisp code in this file. This file then ensures that all necessary
+packages are installed, does some basic customizations and then loads
+the rest of the customization files.
+
+* Package setup
+
+- Basic packages which should always be loaded.
+  #+BEGIN_SRC emacs-lisp
+    (require 'cl)
+    (require 'package)
+    (require 'saveplace)
+    (require 'recentf)
+    (require 'uniquify)
+  #+END_SRC
+
+- Setup ELPA archives.
+  #+BEGIN_SRC emacs-lisp
+    (add-to-list 'package-archives
+                 '("melpa" . "http://melpa.milkbox.net/packages/") t)
+    (add-to-list 'package-archives
+                 '("marmalade" . "http://marmalade-repo.org/packages/") t)
+    (package-initialize)
+
+    (when (not package-archive-contents)
+      (package-refresh-contents))
+  #+END_SRC
+
+- List of packages that need to be installed.
+  #+BEGIN_SRC emacs-lisp
+    (defvar required-packages
+      '(;; Themes
+        solarized-theme
+        ujelly-theme
+        zenburn-theme
+        ;; VCS
+        magit
+        ;; Elixir
+        elixir-mode
+        elixir-yasnippets
+        alchemist
+        ;; Clojure
+        clojure-mode
+        cider
+        ;; Markup
+        markdown-mode
+        yaml-mode
+        ;; Haskell
+        flymake-hlint
+        haskell-mode
+        ghci-completion
+        ;; Lisp
+        elisp-slime-nav
+        paredit
+        parenface
+        ;; Scala
+        scala-mode2
+        ;; Javascript
+        flymake-jslint
+        js-comint
+        js2-mode
+        jsx-mode
+        ;; Python
+        flymake-python-pyflakes
+        nose
+        pep8
+        pylint
+        pymacs
+        python
+        ;; Misc
+        ack
+        emmet-mode
+        idle-highlight-mode
+        ido-ubiquitous
+        flx-ido
+        ido-vertical-mode
+        neotree
+        popup
+        powerline
+        projectile
+        rainbow-mode
+        smex
+        yasnippet)
+      "Packages to ensure are installed at launch.")
+  #+END_SRC
+
+- Install any required packages that are not installed.
+  #+BEGIN_SRC emacs-lisp
+    (dolist (p required-packages)
+      (when (not (package-installed-p p))
+        (package-install p)))
+  #+END_SRC
+
+* Configuration
+
+Load the remaining configuration files.
+
+- [[file:defuns.org][Function definitions]]
+  #+BEGIN_SRC emacs-lisp
+    (org-babel-load-file "~/.emacs.d/config/defuns.org")
+  #+END_SRC
+
+- [[file:misc.org][Miscellaneous]]
+  #+BEGIN_SRC emacs-lisp
+    (org-babel-load-file "~/.emacs.d/config/misc.org")
+  #+END_SRC
+
+- [[file:elixir.org][Elixir and Erlang]]
+  #+BEGIN_SRC emacs-lisp
+    (org-babel-load-file "~/.emacs.d/config/elixir.org")
+  #+END_SRC
+
+- [[file:eshell.org][Eshell]]
+  #+BEGIN_SRC emacs-lisp
+    (org-babel-load-file "~/.emacs.d/config/eshell.org")
+  #+END_SRC
+
+- [[file:haskell.org][Haskell]]
+  #+BEGIN_SRC emacs-lisp
+    (org-babel-load-file "~/.emacs.d/config/haskell.org")
+  #+END_SRC
+
+- [[file:js.org][JavaScript]]
+  #+BEGIN_SRC emacs-lisp
+    (org-babel-load-file "~/.emacs.d/config/js.org")
+  #+END_SRC
+
+- [[file:key-bindings.org][Key bindings]]
+  #+BEGIN_SRC emacs-lisp
+    (org-babel-load-file "~/.emacs.d/config/key-bindings.org")
+  #+END_SRC
+
+- [[file:lisp.org][Lisp]]
+  #+BEGIN_SRC emacs-lisp
+    (org-babel-load-file "~/.emacs.d/config/lisp.org")
+  #+END_SRC
+
+- [[file:org.org][Org mode]]
+  #+BEGIN_SRC emacs-lisp
+    (org-babel-load-file "~/.emacs.d/config/org.org")
+  #+END_SRC
+
+- [[file:yasnippet.org][Yasnippet]]
+  #+BEGIN_SRC emacs-lisp
+    (org-babel-load-file "~/.emacs.d/config/yasnippet.org")
+  #+END_SRC

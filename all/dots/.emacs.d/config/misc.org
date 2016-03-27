@@ -1,0 +1,194 @@
+#+TITLE: Miscellaneous Configuration
+#+OPTIONS: toc:nil num:nil ^:nil
+
+* Miscellaneous Configuration
+
+Things that don't belong anywhere else.
+
+** Aliases
+#+BEGIN_SRC emacs-lisp
+  (defalias 'yes-or-no-p 'y-or-n-p)
+  (defalias 'auto-tail-revert-mode 'tail-mode)
+#+END_SRC
+
+** Backup files and save places
+#+BEGIN_SRC emacs-lisp
+  (setq auto-save-file-name-transforms
+        `((".*" ,(expand-file-name "~/.emacs.d/backups") t)))
+  (setq backup-directory-alist
+        `((".*" . ,(expand-file-name "~/.emacs.d/backups"))))
+  (setq save-place-file "~/.emacs.d/places")
+#+END_SRC
+
+** Company
+#+BEGIN_SRC emacs-lisp
+  (global-company-mode t)
+  (setq company-begin-commands '(self-insert-command)
+        company-dabbrev-downcase nil
+        company-tooltip 12
+        company-tooltip-limit 12
+        company-idle-delay .1
+        company-selection-wrap-around t)
+  #+END_SRC
+
+** Enable region case switching key bindings
+#+BEGIN_SRC emacs-lisp
+  (put 'upcase-region 'disabled nil)
+  (put 'downcase-region 'disabled nil)
+#+END_SRC
+
+** Flyspell
+#+BEGIN_SRC emacs-lisp
+  (require 'flyspell)
+  (setq ispell-program-name "aspell"
+        ispell-extra-args '("--sug-mode=ultra"))
+#+END_SRC
+
+** Highlight current line
+#+BEGIN_SRC emacs-lisp
+  (global-hl-line-mode t)
+#+END_SRC
+
+** Highlight matching parens
+#+BEGIN_SRC emacs-lisp
+  (show-paren-mode t)
+#+END_SRC
+
+** HTML
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'html-mode-hook (lambda ()
+                              (emmet-mode t)
+                              (sgml-mode 0)))
+#+END_SRC
+
+** Ido
+#+BEGIN_SRC emacs-lisp
+  (ido-mode t)
+  (ido-ubiquitous t)
+
+  (require 'flx-ido)
+  (ido-mode 1)
+  (ido-everywhere 1)
+  (flx-ido-mode 1)
+  ;; disable ido faces to see flx highlights.
+  (setq ido-enable-flex-matching t)
+  (setq ido-use-faces nil)
+  (ido-vertical-mode 1)
+  (setq ido-vertical-define-keys 'C-n-and-C-p-only)
+#+END_SRC
+
+** Modeline
+#+BEGIN_SRC emacs-lisp
+  (require 'powerline)
+  (setq-default mode-line-format
+                '("%e"
+                  (:eval
+                   (let* ((active (powerline-selected-window-active))
+                          (mode-line (if active 'mode-line 'mode-line-inactive))
+                          (face1 (if active 'powerline-active1 'powerline-inactive1))
+                          (face2 (if active 'powerline-active2 'powerline-inactive2))
+                          (separator-left (intern (format "powerline-%s-%s"
+                                                          powerline-default-separator
+                                                          (car powerline-default-separator-dir))))
+                          (separator-right (intern (format "powerline-%s-%s"
+                                                           powerline-default-separator
+                                                           (cdr powerline-default-separator-dir))))
+                          (lhs (list (powerline-buffer-id `(mode-line-buffer-id ,mode-line) 'l)
+
+                                     (when (and vc-mode buffer-file-name)
+                                       (let ((backend (vc-backend buffer-file-name)))
+                                         (when backend
+                                           (concat (powerline-raw "[" mode-line 'l)
+                                                   (powerline-raw (format "%s:%s" backend (vc-working-revision buffer-file-name backend)))
+                                                   (powerline-raw "]" mode-line)))))
+                                     (when (buffer-modified-p)
+                                       (powerline-raw " + " mode-line))))
+                          (rhs (list (powerline-raw global-mode-string mode-line 'r)
+                                     (powerline-raw "%l," mode-line 'l)
+                                     (powerline-raw (format-mode-line '(10 "%c")))
+                                     (powerline-raw (replace-regexp-in-string  "%" "%%" (format-mode-line '(-3 "%p"))) mode-line 'r))))
+                     (concat (powerline-render lhs)
+                             (powerline-fill mode-line (powerline-width rhs))
+                             (powerline-render rhs))))))
+#+END_SRC
+
+** Open compressed files
+#+BEGIN_SRC emacs-lisp
+  (auto-compression-mode t)
+#+END_SRC
+
+** Paragraph
+#+BEGIN_SRC emacs-lisp
+  (setq sentence-end-double-space nil)
+#+END_SRC
+** Projectile
+#+BEGIN_SRC emacs-lisp
+  (require 'projectile)
+  (setq projectile-enable-caching t)
+  (setq projectile-globally-ignored-directories (append '("node_modules" ".svn") projectile-globally-ignored-directories))
+  (projectile-global-mode)
+  (setq projectile-sort-order (quote recently-active))
+#+END_SRC
+
+** Newlines at end of files
+#+BEGIN_SRC emacs-lisp
+  (setq require-final-newline t)
+#+END_SRC
+
+** Setup path
+#+BEGIN_SRC emacs-lisp
+  (defun set-exec-path-from-shell-PATH ()
+    (let ((path-from-shell (shell-command-to-string "$SHELL -i -c 'echo $PATH'")))
+      (setenv "PATH" path-from-shell)
+      (setq exec-path (split-string path-from-shell path-separator))))
+  (when window-system (set-exec-path-from-shell-PATH))
+#+END_SRC
+
+** Smex
+#+BEGIN_SRC emacs-lisp
+  (setq smex-save-file (concat user-emacs-directory ".smex-items"))
+  (smex-initialize)
+#+END_SRC
+
+** Tabs
+#+BEGIN_SRC emacs-lisp
+  (set-default 'tab-width 4)
+  (set-default 'c-basic-offset 4)
+#+END_SRC
+
+** Text
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'text-mode-hook 'turn-on-auto-fill)
+  (add-hook 'text-mode-hook 'turn-on-flyspell)
+#+END_SRC
+
+** UTF-8 by default
+#+BEGIN_SRC emacs-lisp
+  (set-language-environment 'utf-8)
+  (set-terminal-coding-system 'utf-8)
+  (set-keyboard-coding-system 'utf-8)
+  (prefer-coding-system 'utf-8)
+#+END_SRC
+
+** VC
+Remove the vc-find-file-hook because of a performance bug.
+#+BEGIN_SRC emacs-lisp
+  (remove-hook 'find-file-hooks 'vc-find-file-hook)
+#+END_SRC
+
+** Window systems
+#+BEGIN_SRC emacs-lisp
+  (when window-system
+    (setq frame-title-format '(buffer-file-name "%f" ("%b")))
+    (mouse-wheel-mode t)
+    (blink-cursor-mode -1))
+
+  (setq inhibit-startup-screen t
+        inhibit-startup-echo-area-message t
+        scroll-margin 0
+        scroll-conservatively 100000
+        scroll-preserve-screen-position 1)
+
+  (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
+    (when (fboundp mode) (funcall mode -1)))
+#+END_SRC

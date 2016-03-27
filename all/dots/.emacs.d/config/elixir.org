@@ -1,0 +1,13 @@
+#+TITLE: Elixir and Erlang Configuration
+#+OPTIONS: toc:nil num:nil ^:nil
+
+* Elixir and Erlang Configuration
+
+Configure modes for editing Elixir and Erlang.
+
+#+BEGIN_SRC emacs-lisp
+  (require 'elixir-mode)
+  (require 'alchemist)
+  (add-hook 'elixir-mode-hook (lambda ()
+                                (setq tab-width 2)))
+#+END_SRC
