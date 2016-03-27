@@ -57,3 +57,7 @@
   (define-key global-map (kbd "C-+") 'text-scale-increase)
   (define-key global-map (kbd "C--") 'text-scale-decrease)
 #+END_SRC
+* Window Management
+#+BEGIN_SRC emacs-lisp
+  (define-key global-map (kbd "C-x p") 'previous-multiframe-window)
+#+END_SRC
