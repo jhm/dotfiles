@@ -2,5 +2,6 @@
 #+OPTIONS: toc: nil num:nil ^:nil
 
 #+BEGIN_SRC emacs-lisp
+  (setq yas-snippet-dirs "~/.emacs.d/snippets")
   (yas-global-mode 1)
 #+END_SRC
