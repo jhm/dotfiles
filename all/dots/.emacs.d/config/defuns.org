@@ -34,6 +34,8 @@
     (load-theme 'ujelly t)
     (set-fringe-style '(8 . 0))
     (set-background-color "#111")
+    (set-face-background 'vertical-border "#111")
+    (set-face-foreground 'vertical-border "#666")
     (set-face-attribute 'mode-line nil
       :foreground "#111" :background "green")
     (set-face-attribute 'mode-line-inactive nil
