@@ -5,14 +5,14 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="jhm"
 
 # Aliases
+alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias ls="ls -l"
-alias scala="scala -cp /home/john/.ivy2/cache/org.scalaz/scalaz-core_2.10/jars/scalaz-core_2.10-7.0.3.jar -feature -language:higherKinds"
 
 # Disable auto-setting the terminal title.
 DISABLE_AUTO_TITLE="true"
 
 # Enabled plugins.
-plugins=(cabal git python)
+plugins=(cabal git python ruby)
 
 source $ZSH/oh-my-zsh.sh
 
