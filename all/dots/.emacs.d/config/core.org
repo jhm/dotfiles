@@ -72,6 +72,10 @@ the rest of the customization files.
         pylint
         pymacs
         python
+        ;; Ruby
+        inf-ruby
+        rspec-mode
+        rvm
         ;; Misc
         ack
         emmet-mode
@@ -95,7 +99,7 @@ the rest of the customization files.
       (when (not (package-installed-p p))
         (package-install p)))
   #+END_SRC
-  
+
 * Configuration
 
 Load the remaining configuration files.
@@ -143,6 +147,11 @@ Load the remaining configuration files.
 - [[file:org.org][Org mode]]
   #+BEGIN_SRC emacs-lisp
     (org-babel-load-file "~/.emacs.d/config/org.org")
+  #+END_SRC
+
+- [[file:ruby.org][Ruby]]
+  #+BEGIN_SRC emacs-lisp
+    (org-babel-load-file "~/.emacs.d/config/ruby.org")
   #+END_SRC
 
 - [[file:yasnippet.org][Yasnippet]]

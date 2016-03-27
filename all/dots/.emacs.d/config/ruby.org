@@ -1,0 +1,25 @@
+#+TITLE: Ruby Configuration
+#+OPTIONS: toc:nil num:nil ^:nil
+
+Configure modes for editing Ruby.
+
+#+BEGIN_SRC emacs-lisp
+  (require 'ruby-mode)
+  (require 'inf-ruby)
+  (require 'rspec-mode)
+  (require 'rvm)
+
+  (add-to-list 'auto-mode-alist '("Rakefile\\'" . ruby-mode))
+  (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
+  (add-to-list 'auto-mode-alist '("Gemfile\\'" . ruby-mode))
+  (add-to-list 'auto-mode-alist '("\\.gemspec\\'" . ruby-mode))
+  (add-to-list 'auto-mode-alist '("Vagrantfile\\'" . ruby-mode))
+
+  (eval-after-load 'ruby-mode
+    '(progn
+       (setq rspec-spec-command "rspec")
+       (setq rspec-use-rake-when-possible nil)
+       (setq rspec-use-bundler-when-possible t)
+       (setq rspec-use-rvm t)
+       (rvm-use-default)))
+#+END_SRC
