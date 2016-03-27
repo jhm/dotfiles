@@ -5,7 +5,7 @@
 
 The =~/.emacs.d/init.el= file is loaded by Emacs at startup and loads
 the elisp code in this file. This file then ensures that all necessary
-packages are installed, does some basic customizations and then loads
+packages are installed, does some basic customization and then loads
 the rest of the customization files.
 
 * Package setup
