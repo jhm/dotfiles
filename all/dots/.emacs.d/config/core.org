@@ -149,6 +149,11 @@ Load the remaining configuration files.
     (org-babel-load-file "~/.emacs.d/config/org.org")
   #+END_SRC
 
+- [[file:registers.org][Registers]]
+  #+BEGIN_SRC emacs-lisp
+    (org-babel-load-file "~/.emacs.d/config/registers.org") 
+  #+END_SRC
+
 - [[file:ruby.org][Ruby]]
   #+BEGIN_SRC emacs-lisp
     (org-babel-load-file "~/.emacs.d/config/ruby.org")
