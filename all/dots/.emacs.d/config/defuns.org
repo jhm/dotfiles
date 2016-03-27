@@ -39,7 +39,7 @@
     (set-face-attribute 'mode-line nil
       :foreground "#111" :background "green")
     (set-face-attribute 'mode-line-inactive nil
-      :foreground "#111" :background "red")
+      :foreground "#111" :background "#333")
     (set-face-attribute 'linum nil :background "#111")
     (set-face-attribute 'linum nil :foreground "#2a2a2a"))
 #+END_SRC
