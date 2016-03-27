@@ -8,4 +8,7 @@ Configure modes for editing Elixir and Erlang.
   (require 'alchemist)
   (add-hook 'elixir-mode-hook (lambda ()
                                 (setq tab-width 2)))
+
+  (setq alchemist-goto-elixir-source-dir "~/Code/elixir/")
+  (setq alchemist-goto-erlang-source-dir "~/Code/otp/")
 #+END_SRC
