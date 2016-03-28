@@ -9,6 +9,10 @@ Configure modes for editing Javascript and JSON.
   (autoload 'js2-mode "js2" nil t)
   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
   (add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
+
+  (add-hook 'js2-mode-hook (lambda ()
+                             (setq indent-tabs-mode nil)
+                             (setq tab-width 2)))
 #+END_SRC
 
 * Enable jsx-mode for .jsx files.

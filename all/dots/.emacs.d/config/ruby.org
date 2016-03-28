@@ -22,4 +22,7 @@ Configure modes for editing Ruby.
        (setq rspec-use-bundler-when-possible t)
        (setq rspec-use-rvm t)
        (rvm-use-default)))
+
+  (add-hook 'ruby-mode-hook (lambda ()
+                              setq tab-width 2))
 #+END_SRC

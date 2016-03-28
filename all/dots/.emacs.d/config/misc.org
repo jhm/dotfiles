@@ -29,6 +29,12 @@ Things that don't belong anywhere else.
         company-selection-wrap-around t)
   #+END_SRC
 
+* CSS
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'css-mode-hook (lambda ()
+                             (setq tab-width 2)))
+#+END_SRC
+
 * Enable region case switching key bindings
 #+BEGIN_SRC emacs-lisp
   (put 'upcase-region 'disabled nil)
@@ -150,8 +156,10 @@ Things that don't belong anywhere else.
 
 * Tabs
 #+BEGIN_SRC emacs-lisp
-  (set-default 'tab-width 4)
-  (set-default 'c-basic-offset 4)
+  (setq-default indent-tabs-mode nil)
+  (setq-default indent-line-function 2)
+  (setq-default tab-width 2)
+  (setq-default c-basic-offset 2)
 #+END_SRC
 
 * Text
