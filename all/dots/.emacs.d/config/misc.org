@@ -182,6 +182,10 @@ Remove the vc-find-file-hook because of a performance bug.
   (remove-hook 'find-file-hooks 'vc-find-file-hook)
 #+END_SRC
 
+* Whitespace
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
+#+END_SRC
 * Window systems
 #+BEGIN_SRC emacs-lisp
   (when window-system
