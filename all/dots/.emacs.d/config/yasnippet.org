@@ -1,8 +1,7 @@
 #+TITLE: Yasnippet Configuration
-#+OPTIONS: toc: nil num:nil ^:nil
+#+OPTIONS: toc:nil num:nil ^:nil
 
 #+BEGIN_SRC emacs-lisp
   (require 'yasnippet)
-  (setq yas-snippet-dirs "~/.emacs.d/snippets")
   (yas-global-mode 1)
 #+END_SRC
