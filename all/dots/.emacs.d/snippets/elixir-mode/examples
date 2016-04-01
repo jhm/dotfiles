@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: examples
+# key: examples
+# condition: 'force-in-comment
+# expand-env: ((yas-indent-line 'fixed))
+# --
+## Examples
+
+    iex> $1
+    $0
