@@ -84,7 +84,6 @@ the rest of the customization files.
         flx-ido
         ido-vertical-mode
         neotree
-        popup
         powerline
         projectile
         rainbow-mode
@@ -151,7 +150,7 @@ Load the remaining configuration files.
 
 - [[file:registers.org][Registers]]
   #+BEGIN_SRC emacs-lisp
-    (org-babel-load-file "~/.emacs.d/config/registers.org") 
+    (org-babel-load-file "~/.emacs.d/config/registers.org")
   #+END_SRC
 
 - [[file:ruby.org][Ruby]]
