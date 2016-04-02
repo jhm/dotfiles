@@ -1,9 +1,9 @@
-#+TITLE: Javascript Configuration
+#+TITLE: JavaScript Configuration
 #+OPTIONS: toc:nil num:nil ^:nil
 
-Configure modes for editing Javascript and JSON.
+Configure modes for editing JavaScript and JSON.
 
-* Enable and autoload js2 mode for .js and .json files.
+* Enable and auto load js2 mode for .js and .json files.
 #+BEGIN_SRC emacs-lisp
   (require 'js2-mode)
   (autoload 'js2-mode "js2" nil t)
@@ -22,7 +22,7 @@ Configure modes for editing Javascript and JSON.
   (setq jsx-indent-level 2)
 #+END_SRC
 
-* Setup js-comint mode for a javascript repl.
+* Setup js-comint mode for a JavaScript repl.
 #+BEGIN_SRC emacs-lisp
   (require 'js-comint)
   (setq inferior-js-program-command "/usr/bin/js")
