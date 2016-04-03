@@ -48,6 +48,10 @@ Things that don't belong anywhere else.
         ispell-extra-args '("--sug-mode=ultra"))
 #+END_SRC
 
+* Font
+#+BEGIN_SRC emacs-lisp
+  (set-face-attribute 'default nil :height 140)
+#+END_SRC
 * Highlight current line
 #+BEGIN_SRC emacs-lisp
   (global-hl-line-mode t)
