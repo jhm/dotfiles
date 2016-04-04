@@ -172,6 +172,10 @@ Things that don't belong anywhere else.
   (add-hook 'text-mode-hook 'turn-on-flyspell)
 #+END_SRC
 
+* Theme
+#+BEGIN_SRC emacs-lisp
+  (my-ujelly)
+#+END_SRC
 * UTF-8 by default
 #+BEGIN_SRC emacs-lisp
   (set-language-environment 'utf-8)

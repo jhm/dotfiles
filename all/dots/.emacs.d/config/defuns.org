@@ -39,9 +39,7 @@
     (set-face-attribute 'mode-line nil
       :foreground "#111" :background "green")
     (set-face-attribute 'mode-line-inactive nil
-      :foreground "#111" :background "#333")
-    (set-face-attribute 'linum nil :background "#111")
-    (set-face-attribute 'linum nil :foreground "#2a2a2a"))
+      :foreground "#111" :background "#333"))
 #+END_SRC
 
 ** Zenburn
