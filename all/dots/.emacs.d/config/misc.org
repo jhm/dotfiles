@@ -184,12 +184,6 @@ Things that don't belong anywhere else.
   (prefer-coding-system 'utf-8)
 #+END_SRC
 
-* VC
-Remove the vc-find-file-hook because of a performance bug.
-#+BEGIN_SRC emacs-lisp
-  (remove-hook 'find-file-hooks 'vc-find-file-hook)
-#+END_SRC
-
 * Whitespace
 #+BEGIN_SRC emacs-lisp
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
