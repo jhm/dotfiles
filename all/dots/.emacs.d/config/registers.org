@@ -8,4 +8,5 @@ Registers to quickly jump to various files using C-x r j.
   (set-register ?c '(file . "~/Notes/emacs.org"))
   (set-register ?n '(file . "~/Notes/main.org"))
   (set-register ?q '(file . "~/Notes/quotes.org"))
+  (set-register ?w '(file . "~/Notes/work.org"))
 #+END_SRC
