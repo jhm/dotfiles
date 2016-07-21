@@ -119,3 +119,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:UltiSnipsExpandTrigger="<c-a>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Nerdtree configuration.
+nnoremap <leader>t :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.o$']
