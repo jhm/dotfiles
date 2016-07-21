@@ -1,4 +1,4 @@
-#include ".colors/zenburn"
+#include ".colors/base16-default-dark"
 
 Xft.autohint:            0
 Xft.lcdfilter:           lcddefault
@@ -13,21 +13,14 @@ urxvt.termName:          rxvt
 urxvt.imLocale:          en_US.UTF-8
 urxvt.loginShell:        true
 urxvt.saveLines:         1000
-urxvt.letterSpace:       -1
+urxvt.letterSpace:       0
 
-urxvt.font:              xft:DejaVu Sans Mono:pixelsize=13
+urxvt.font:              xft:Hack:style=Regular,size=10
 urxvt.inheritPixmap:     false
 urxvt.shading:           40
 urxvt.fading:            0
 urxvt.jumpScroll:        true
-urxvt.tintColor:         black
 urxvt.cursorBlink:       false
-urxvt.cursorColor:       #000000
-urxvt.cursorColor2:      #FFFFFF
-urxvt.colorBD:           #CCCCCC
-urxvt.colorIT:           #DDDDDD
-urxvt.colorUL:           #999999
-urxvt.underlineColor:    #CCCCCC
 urxvt.scrollBar:         false
 urxvt.perl-ext:          matcher
 urxvt.urlLauncher:       firefox

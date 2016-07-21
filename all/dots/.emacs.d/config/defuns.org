@@ -10,9 +10,7 @@
   (load-theme 'sanityinc-tomorrow-day t)
   (set-fringe-style '(8 . 0))
   (set-face-attribute 'mode-line nil
-                      :foreground "white" :background "#222"))
-;;  (set-face-attribute 'linum nil :background "#ffffff")
-;;  (set-face-attribute 'linum nil :foreground "#aaaaaa"))
+                      :foreground "white" :background "#222")))
 #+END_SRC
 
 ** Twilight

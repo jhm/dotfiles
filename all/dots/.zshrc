@@ -1,11 +1,11 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Theme
 ZSH_THEME="jhm"
 
 # Aliases
-alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+alias emacs="emacs -nw"
 alias ls="ls -l"
 
 # Disable auto-setting the terminal title.
@@ -16,7 +16,10 @@ plugins=(cabal git python ruby)
 
 source $ZSH/oh-my-zsh.sh
 
+BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-default-dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 # User configuration.
-export EDITOR=emacs
+export EDITOR=vim
 
 export PATH=$HOME/.bin:$HOME/.pub-cache/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin
