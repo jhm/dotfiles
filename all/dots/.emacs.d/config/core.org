@@ -58,8 +58,6 @@ the rest of the customization files.
         elisp-slime-nav
         paredit
         parenface
-        ;; Scala
-        scala-mode2
         ;; Javascript
         flymake-jslint
         js-comint
