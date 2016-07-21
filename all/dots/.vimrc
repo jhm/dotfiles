@@ -1,0 +1,111 @@
+set encoding=utf-8
+
+" Enable vim specific features.
+set nocompatible
+
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+" Color schemes.
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'vim-scripts/twilight256.vim'
+Plugin 'chriskempson/base16-vim'
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'altercation/vim-colors-solarized'
+
+" Navigation.
+Plugin 'scrooloose/nerdtree'
+
+" Improved indentation for Python.
+Plugin 'vim-scripts/indentpython.vim'
+
+" Autocomplete.
+Bundle 'Valloric/YouCompleteMe'
+
+" Better statusbar.
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" Project fuzzy finder
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" Better support for surrounding text.
+Plugin 'tpope/vim-surround'
+
+" Emmet for editing HTML, XML and CSS.
+Plugin 'mattn/emmet-vim'
+
+" .editorconfig support.
+Plugin 'editorconfig/editorconfig-vim'
+
+" Snippet support.
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+" Syntax checking.
+Plugin 'scrooloose/syntastic'
+
+call vundle#end()
+filetype plugin indent on
+
+" Move backup directory.
+set backupdir=~/.vim/backups
+set dir=~/.vim/backups
+
+" Always show statusbar.
+set laststatus=2
+
+" Show line numbers.
+set number
+set numberwidth=4
+
+" Enable folding.
+set foldmethod=indent
+set foldlevel=99
+
+" Default indentation rules.
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Display extraneous whitespace.
+set list listchars=tab:».,trail:¬,nbsp:·
+
+" Use one space after punctuation.
+set nojoinspaces
+
+" Highlight current line
+set cursorline
+
+" Enable incremental search
+set incsearch
+
+" Highlight search matches
+set hlsearch
+
+" Enable syntax highlighting.
+syntax on
+
+" Default colorscheme.
+let base16colorspace=256
+colorscheme base16-default-dark
+
+" Show split windows at the bottom right of the screen.
+set splitbelow
+set splitright
+
+" Airline configuration.
+let g:airline_powerline_fonts=1
+let g:airline_theme='base16'
+
+" YCM configuration.
+let g:ycm_autoclose_preview_window_after_completion=1
+
+" Ultisnips configuration.
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
