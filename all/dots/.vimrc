@@ -49,6 +49,9 @@ Plugin 'honza/vim-snippets'
 " Syntax checking.
 Plugin 'scrooloose/syntastic'
 
+" Git.
+Plugin 'tpope/vim-fugitive'
+
 call vundle#end()
 filetype plugin indent on
 
