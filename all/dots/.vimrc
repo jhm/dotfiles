@@ -78,17 +78,27 @@ set list listchars=tab:».,trail:¬,nbsp:·
 " Use one space after punctuation.
 set nojoinspaces
 
-" Highlight current line
+" Highlight current line.
 set cursorline
 
-" Enable incremental search
+" Enable incremental search.
 set incsearch
 
-" Highlight search matches
+" Highlight search matches.
 set hlsearch
 
 " Enable syntax highlighting.
 syntax on
+
+" Adjust leader and localleader keys.
+let mapleader=","
+let maplocalleader="\\"
+
+" Faster window switching.
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Default colorscheme.
 let base16colorspace=256
@@ -106,6 +116,6 @@ let g:airline_theme='base16'
 let g:ycm_autoclose_preview_window_after_completion=1
 
 " Ultisnips configuration.
-let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsExpandTrigger="<c-a>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
