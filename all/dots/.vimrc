@@ -71,8 +71,9 @@ set foldmethod=indent
 set foldlevel=99
 
 " Default indentation rules.
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
 " Display extraneous whitespace.
@@ -126,3 +127,13 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " Nerdtree configuration.
 nnoremap <leader>t :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.o$']
+
+" Python settings.
+autocmd FileType python setlocal autoindent smarttab formatoptions=croql
+
+" Ruby settings.
+autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
+" Go settings.
+autocmd BufNewFile,BufRead *.go setlocal ft=go
+autocmd FileType go setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
