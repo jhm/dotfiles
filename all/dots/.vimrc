@@ -112,19 +112,19 @@ colorscheme base16-default-dark
 set splitbelow
 set splitright
 
-" Airline configuration.
+" Airline settings.
 let g:airline_powerline_fonts=1
 let g:airline_theme='base16'
 
-" YCM configuration.
+" YCM settings.
 let g:ycm_autoclose_preview_window_after_completion=1
 
-" Ultisnips configuration.
+" Ultisnips settings.
 let g:UltiSnipsExpandTrigger="<c-a>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" Nerdtree configuration.
+" Nerdtree settings.
 nnoremap <leader>t :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.o$']
 
