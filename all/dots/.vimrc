@@ -49,11 +49,19 @@ Plugin 'honza/vim-snippets'
 " Syntax checking.
 Plugin 'scrooloose/syntastic'
 
+" Ruby
+Plugin 'vim-ruby/vim-ruby'
+
+" Elixir
+Plugin 'elixir-lang/vim-elixir'
+
 " Git.
 Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
+
+set timeoutlen=1000 ttimeoutlen=0
 
 " Move backup directory.
 set backupdir=~/.vim/backups
@@ -132,7 +140,8 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.o$']
 autocmd FileType python setlocal autoindent smarttab formatoptions=croql
 
 " Ruby settings.
-autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " Go settings.
 autocmd BufNewFile,BufRead *.go setlocal ft=go
