@@ -55,6 +55,9 @@ Plugin 'vim-ruby/vim-ruby'
 " Elixir
 Plugin 'elixir-lang/vim-elixir'
 
+" Rust
+Plugin 'rust-lang/rust.vim'
+
 " Git.
 Plugin 'tpope/vim-fugitive'
 
@@ -114,7 +117,7 @@ nnoremap <C-l> <C-w>l
 
 " Default colorscheme.
 let base16colorspace=256
-colorscheme base16-default-dark
+colorscheme base16-tomorrow-night
 
 " Show split windows at the bottom right of the screen.
 set splitbelow

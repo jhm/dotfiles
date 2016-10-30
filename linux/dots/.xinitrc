@@ -15,7 +15,7 @@ xmodmap ~/.Xmodmap
 xsetroot -solid '#666666'
 
 # Start MPD daemon.
-mpd &
+# mpd &
 
 # start urxvt terminal daemon
 /usr/bin/urxvtd -q -o -f &
