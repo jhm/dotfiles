@@ -58,14 +58,30 @@ Plugin 'elixir-lang/vim-elixir'
 " Git.
 Plugin 'tpope/vim-fugitive'
 
+" Wiki
+Plugin 'vimwiki/vimwiki'
+
+" Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+" Syntax highlighting for single file vue components.
+Plugin 'posva/vim-vue'
+
 call vundle#end()
 filetype plugin indent on
 
 set timeoutlen=1000 ttimeoutlen=0
 
-" Move backup directory.
+" Set backup directory.
 set backupdir=~/.vim/backups
 set dir=~/.vim/backups
+
+set backspace=2
+
+" Set vimwiki and options.
+let g:vimwiki_list = [{'path': '~/Notes/', 'path_html': '~/Notes/public_html/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_folding='expr'
 
 " Always show statusbar.
 set laststatus=2
@@ -75,7 +91,7 @@ set number
 set numberwidth=4
 
 " Enable folding.
-set foldmethod=indent
+set foldmethod=syntax
 set foldlevel=99
 
 " Default indentation rules.
@@ -146,3 +162,6 @@ autocmd FileType ruby,eruby setlocal expandtab shiftwidth=2 tabstop=2 softtabsto
 " Go settings.
 autocmd BufNewFile,BufRead *.go setlocal ft=go
 autocmd FileType go setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
+
+" Javascript settings.
+autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
