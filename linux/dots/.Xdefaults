@@ -1,4 +1,4 @@
-#include ".colors/base16-default-dark"
+#include ".colors/base16-tomorrow-night.Xresources"
 
 Xft.autohint:            0
 Xft.lcdfilter:           lcddefault
@@ -9,13 +9,13 @@ Xft.dpi:                 96
 Xft.rgba:                rgb
 
 urxvt.xftAutoHint:       true
-urxvt.termName:          rxvt
+urxvt.termName:          rxvt-unicode-256color
 urxvt.imLocale:          en_US.UTF-8
 urxvt.loginShell:        true
 urxvt.saveLines:         1000
-urxvt.letterSpace:       0
+urxvt.letterSpace:       -1
 
-urxvt.font:              xft:Hack:style=Regular,size=10
+urxvt.font:              xft:Hack:size=12
 urxvt.inheritPixmap:     false
 urxvt.shading:           40
 urxvt.fading:            0

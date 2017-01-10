@@ -40,14 +40,14 @@ main = do
 
 ------------------------------------------------------------------------------
 -- dzen2 workspace bar.
-workspaceBar = "dzen2 -bg '#000000' -ta l -h 24 -w 1800 -fn '-*-terminus-*-r-normal-*-12-*-*-*-*-*-*-*' -e '' "
+workspaceBar = "dzen2 -bg '#000000' -ta l -h 24 -w 1600 -fn '-*-terminus-*-r-normal-*-12-*-*-*-*-*-*-*' -e '' "
 
 ------------------------------------------------------------------------------
 -- conky statistics bar.
 --
 -- conky's output is piped into a second instance of dzen2 which sits
 -- on the right side of the workspace bar.
-statsBar = "conky -c /home/john/.xmonad/conky_dzen | dzen2 -x '1800' -w '120' -h '24' -ta 'r' -bg '#000000' -fg '#777777' -y '0'  -fn '-*-terminus-*-r-normal-*-12-*-*-*-*-*-*-*'"
+statsBar = "conky -c /home/john/.xmonad/conky_dzen | dzen2 -x '1600' -w '320' -h '24' -ta 'r' -bg '#000000' -fg '#777777' -y '0'  -fn '-*-terminus-*-r-normal-*-12-*-*-*-*-*-*-*'"
 
 ------------------------------------------------------------------------------
 -- Trayer startup command.
@@ -92,8 +92,8 @@ myWorkspaces = map (\icon -> "^i(/home/john/.xmonad/icons/sm4tik/" ++ icon ++ ")
 gapWidth = 6
 
 -- myTiled = avoidStruts $ tiled
-
-myTiled = spacing gapWidth $ avoidStruts $ gaps [(U, gapWidth), (D, gapWidth), (L, gapWidth), (R, gapWidth)] $ tiled
+--myTiled = spacing gapWidth $ avoidStruts $ gaps [(U, gapWidth), (D, gapWidth), (L, gapWidth), (R, gapWidth)] $ tiled
+myTiled = avoidStruts $ tiled
   where
     tiled = Tall nmaster delta ratio
     -- Default number of windows in the master pane.
