@@ -74,6 +74,7 @@ Plugin 'posva/vim-vue'
 call vundle#end()
 filetype plugin indent on
 
+set history=200
 set timeoutlen=1000 ttimeoutlen=0
 
 " Set backup directory.
@@ -81,9 +82,16 @@ set backupdir=~/.vim/backups
 set dir=~/.vim/backups
 
 set backspace=2
+set tw=78
 
 " Set vimwiki and options.
-let g:vimwiki_list = [{'path': '~/Notes/', 'path_html': '~/Notes/public_html/', 'syntax': 'markdown', 'ext': '.md'}]
+let wiki = {}
+let wiki.path = '~/Notes'
+let wiki.path_html = '~/Notes/public_html/'
+let wiki.syntax = 'markdown'
+let wiki.ext = '.md'
+let wiki.nested_syntaxes = {'ruby': 'ruby', 'javascript': 'javascript'}
+let g:vimwiki_list = [wiki]
 let g:vimwiki_folding='expr'
 
 " Always show statusbar.
@@ -134,6 +142,9 @@ nnoremap <C-l> <C-w>l
 " Default colorscheme.
 let base16colorspace=256
 colorscheme base16-ocean
+
+set grepprg=ack\ --nogroup\ --column\ $*
+set grepformat=%f:%l:%c:%m
 
 " Show split windows at the bottom right of the screen.
 set splitbelow
