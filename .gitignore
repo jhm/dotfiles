@@ -10,3 +10,4 @@ all/dots/.emacs.d/ido.last
 all/dots/.emacs.d/places
 all/dots/.emacs.d/projectile*
 all/dots/.emacs.d/recentf
+linux/dots/.colors/*.Xresources

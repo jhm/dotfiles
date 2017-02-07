@@ -133,7 +133,7 @@ nnoremap <C-l> <C-w>l
 
 " Default colorscheme.
 let base16colorspace=256
-colorscheme base16-tomorrow-night
+colorscheme base16-ocean
 
 " Show split windows at the bottom right of the screen.
 set splitbelow

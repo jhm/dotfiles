@@ -1,4 +1,4 @@
-#include ".colors/base16-tomorrow-night.Xresources"
+#include ".colors/base16-ocean.Xresources"
 
 Xft.autohint:            0
 Xft.lcdfilter:           lcddefault
@@ -15,7 +15,7 @@ urxvt.loginShell:        true
 urxvt.saveLines:         1000
 urxvt.letterSpace:       -1
 
-urxvt.font:              xft:Hack:size=12
+urxvt.font:              xft:Hack:size=10
 urxvt.inheritPixmap:     false
 urxvt.shading:           40
 urxvt.fading:            0
