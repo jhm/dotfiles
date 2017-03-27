@@ -17,20 +17,20 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'altercation/vim-colors-solarized'
 
-" Navigation.
+" Sidebar navigation.
 Plugin 'scrooloose/nerdtree'
 
 " Improved indentation for Python.
 Plugin 'vim-scripts/indentpython.vim'
 
-" Autocomplete.
+" Autocomplete
 Bundle 'Valloric/YouCompleteMe'
 
 " Better statusbar.
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-" Project fuzzy finder
+" Project fuzzy finder.
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " Better support for surrounding text.
@@ -42,7 +42,7 @@ Plugin 'mattn/emmet-vim'
 " .editorconfig support.
 Plugin 'editorconfig/editorconfig-vim'
 
-" Snippet support.
+" Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
@@ -51,14 +51,16 @@ Plugin 'scrooloose/syntastic'
 
 " Ruby
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
 
 " Elixir
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'slashmili/alchemist.vim'
 
 " Rust
 Plugin 'rust-lang/rust.vim'
 
-" Git.
+" Git
 Plugin 'tpope/vim-fugitive'
 
 " Wiki
@@ -68,7 +70,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
-" Syntax highlighting for single file vue components.
+" Syntax highlighting for single file vue components
 Plugin 'posva/vim-vue'
 
 call vundle#end()
@@ -81,24 +83,30 @@ set timeoutlen=1000 ttimeoutlen=0
 set backupdir=~/.vim/backups
 set dir=~/.vim/backups
 
+" Allow backspacing over line breaks and autoindent.
 set backspace=2
+
+" Set maximum width of a line being inserted.
 set tw=78
 
-" Set vimwiki and options.
+" Vimwiki configuration.
 let wiki = {}
 let wiki.path = '~/Notes'
 let wiki.path_html = '~/Notes/public_html/'
 let wiki.syntax = 'markdown'
 let wiki.ext = '.md'
-let wiki.nested_syntaxes = {'ruby': 'ruby', 'javascript': 'javascript'}
+let wiki.nested_syntaxes = {'ruby': 'ruby', 'javascript': 'javascript', 'sh': 'sh'}
 let g:vimwiki_list = [wiki]
 let g:vimwiki_folding='expr'
+
+" Assume POSIX compataible shell for sh scripts.
+let g:is_posix = 1
 
 " Always show statusbar.
 set laststatus=2
 
-" Show line numbers.
-set number
+" Show relative line numbers.
+set relativenumber
 set numberwidth=4
 
 " Enable folding.
@@ -106,9 +114,10 @@ set foldmethod=syntax
 set foldlevel=99
 
 " Default indentation rules.
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set shiftround
 set expandtab
 
 " Display extraneous whitespace.
@@ -141,7 +150,7 @@ nnoremap <C-l> <C-w>l
 
 " Default colorscheme.
 let base16colorspace=256
-colorscheme base16-ocean
+colorscheme base16-default-dark
 
 set grepprg=ack\ --nogroup\ --column\ $*
 set grepformat=%f:%l:%c:%m
