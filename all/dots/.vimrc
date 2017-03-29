@@ -148,6 +148,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Display buffer list.
+nnoremap <leader>b :CtrlPBuffer<CR>
+
 " Default colorscheme.
 let base16colorspace=256
 colorscheme base16-default-dark
