@@ -15,4 +15,4 @@
     po = push origin
     st = status
 [push]
-	default = simple
+    default = simple

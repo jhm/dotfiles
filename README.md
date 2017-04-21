@@ -1,6 +1,6 @@
 # dotfiles
 
-Linux and OS X configuration files.
+Personal configuration files.
 
 ## Installation
 
@@ -9,51 +9,55 @@ Clone the repository:
 git clone https://github.com/jhm/dotfiles.git ~/.dotfiles
 ```
 
-Initialize and update the submodules:
-```sh
-cd ~/.dotfiles
-git submodule init
-git submodule update
-```
+The dotfiles are managed with [GNU Stow](https://www.gnu.org/software/stow).
+For example, `stow tmux` will symlink the tmux configuration files found in the
+tmux directory to your home directory.
 
-Run the install script:
-```sh
-./install.sh
-```
+### Irssi
 
-This will symlink all the appropriate files and directories in `~` and
-`~/bin`.
-
-You'll then have to edit `~/.zshrc` and select a zsh
-theme. Alternatively, you can download the theme I use
-[here](https://gist.github.com/jhm/57e80b366ee4dc9cb70e) and place it
-in `~/.oh-my-zsh/themes/jhm.zsh-theme`.
-
-You'll also want to edit the `~/.irssi/config` to setup your IRC
-details. Once you've done so, it's a good idea to ignore future
-changes on the irssi config file so that your connection details are
-never accidentally uploaded to a public repository.
+Edit the `~/.irssi/config` to setup your IRC details. Once you've done so, it's
+a good idea to ignore future changes on the irssi config file so that your
+connection details are never accidentally uploaded to a public repository.
 
 ```sh
 git update-index --assume-unchanged ./irssi/config
 ```
 
-## File Layout
+### Shell Colors
 
-- `all` - Platform independent files.
-- `linux` - Linux specific files.
-- `osx` - OS X specific files.
+For shell colors I use Base 16.
 
-Each of the above sub-directories has a `bin` and a `dots` directory
-that will be linked depending on the current platform. By default, all
-of the files in the `bin` directory will be linked in `~/bin` and
-all of the files in the `dots` directory will be linked in `~`.
+* [Gnome Terminal](https://github.com/aaron-williamson/base16-gnome-terminal)
+
+```sh
+git clone https://github.com/aaron-williamson/base16-gnome-terminal.git ~/.config/base16-gnome-terminal
+.config/base16-gnome-terminal/color-scripts/base16-default-dark.sh
+```
+
+* [Shell](https://github.com/chriskempson/base16-shell)
+
+```sh
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+```
+
+### Vim
+
+The vim configuration requires Vundle and YouCompleteMe to be installed
+manually.
+
+* [Vundle](https://github.com/VundleVim/Vundle.vim)
+* [YouCompleteMe](https://valloric.github.io/YouCompleteMe)
+
+### Zsh
+
+The zsh configuration requires `oh-my-zsh` to be installed manually.
+
+* [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 
-## Inspiration
-
-Largely inspired by [Zach Holman's dotfiles](https://github.com/holman/dotfiles) 
-and a desire to rid myself of a decades worth of unorganized cruft.
+You'll then have to edit `~/.zshrc` and select a zsh theme. The theme I use can
+be found [here](https://gist.github.com/jhm/57e80b366ee4dc9cb70e) and it needs
+to be placed in the `~/.oh-my-zsh/themes` directory.
 
 ## License
 
