@@ -1,4 +1,4 @@
-#include ".colors/base16-ocean.Xresources"
+#include ".colors/base16-tomorrow-night-256.Xresources"
 
 Xft.autohint:            0
 Xft.lcdfilter:           lcddefault
