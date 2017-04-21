@@ -153,7 +153,7 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 
 " Default colorscheme.
 let base16colorspace=256
-colorscheme base16-tomorrow-night
+colorscheme base16-default-dark
 
 set grepprg=ack\ --nogroup\ --column\ $*
 set grepformat=%f:%l:%c:%m

@@ -16,7 +16,7 @@ plugins=(cabal git python ruby)
 
 source $ZSH/oh-my-zsh.sh
 
-BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-default-dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # User configuration.
