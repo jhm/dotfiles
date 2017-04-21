@@ -105,8 +105,8 @@ let g:is_posix = 1
 " Always show statusbar.
 set laststatus=2
 
-" Show relative line numbers.
-set relativenumber
+" Show line numbers.
+set number
 set numberwidth=4
 
 " Enable folding.
@@ -153,7 +153,7 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 
 " Default colorscheme.
 let base16colorspace=256
-colorscheme base16-default-dark
+colorscheme base16-tomorrow-night
 
 set grepprg=ack\ --nogroup\ --column\ $*
 set grepformat=%f:%l:%c:%m
