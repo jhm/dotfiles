@@ -5,79 +5,64 @@ set nocompatible
 
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set clipboard=unnamed
 
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Color schemes.
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'vim-scripts/twilight256.vim'
-Plugin 'chriskempson/base16-vim'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
 
 " Sidebar navigation.
-Plugin 'scrooloose/nerdtree'
-
-" Improved indentation for Python.
-Plugin 'vim-scripts/indentpython.vim'
-
-" Autocomplete
-Bundle 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 " Better statusbar.
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Project fuzzy finder.
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Better support for surrounding text.
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " Emmet for editing HTML, XML and CSS.
-Plugin 'mattn/emmet-vim'
-
-" .editorconfig support.
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'mattn/emmet-vim'
 
 " Snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Syntax checking.
-Plugin 'scrooloose/syntastic'
-
-" Ruby
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
-
-" Elixir
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'slashmili/alchemist.vim'
+Plug 'scrooloose/syntastic'
 
 " Rust
-Plugin 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+
+" Typescript
+Plug 'leafgarland/typescript-vim'
 
 " Git
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " Wiki
-Plugin 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki'
 
 " Markdown
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
-" Syntax highlighting for single file vue components
-Plugin 'posva/vim-vue'
+call plug#end()
 
-call vundle#end()
 filetype plugin indent on
 
+set ttyfast
+set lazyredraw
+set re=1
+set regexpengine=1
+
 set history=200
-set timeoutlen=1000 ttimeoutlen=0
+" set timeoutlen=1000 ttimeoutlen=0
 
 " Set backup directory.
 set backupdir=~/.vim/backups
@@ -148,6 +133,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Open the quickfix and location list.
+nnoremap <leader>q :copen<CR>
+nnoremap <leader>l :lopen<CR>
+
 " Display buffer list.
 nnoremap <leader>b :CtrlPBuffer<CR>
 
@@ -170,7 +159,7 @@ let g:airline_theme='base16'
 let g:ycm_autoclose_preview_window_after_completion=1
 
 " Ultisnips settings.
-let g:UltiSnipsExpandTrigger="<c-a>"
+let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
@@ -178,16 +167,25 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 nnoremap <leader>t :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.o$']
 
+" Rust settings.
+let g:rustfmt_autosave = 1
+
+" Syntastic settings.
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " Python settings.
 autocmd FileType python setlocal autoindent smarttab formatoptions=croql
 
 " Ruby settings.
-" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " Go settings.
 autocmd BufNewFile,BufRead *.go setlocal ft=go
-autocmd FileType go setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
+autocmd FileType go setlocal noexpandtab ts=4 sw=4 sts=4
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
 
 " Javascript settings.
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
