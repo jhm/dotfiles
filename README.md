@@ -5,19 +5,21 @@ Personal configuration files.
 ## Installation
 
 Clone the repository:
+
 ```sh
 git clone https://github.com/jhm/dotfiles.git ~/.dotfiles
 ```
 
 The dotfiles are managed with [GNU Stow](https://www.gnu.org/software/stow).
-For example, `stow tmux` will symlink the tmux configuration files found in the
-tmux directory to your home directory.
+For example, `stow tmux` will symlink the tmux configuration files found in
+the tmux directory to your home directory.
 
 ### Irssi
 
-Edit the `~/.irssi/config` to setup your IRC details. Once you've done so, it's
-a good idea to ignore future changes on the irssi config file so that your
-connection details are never accidentally uploaded to a public repository.
+Edit the `~/.irssi/config` to setup your IRC details. Once you've done so,
+it's a good idea to ignore future changes on the irssi config file so that
+your connection details are never accidentally uploaded to a public
+repository.
 
 ```sh
 git update-index --assume-unchanged ./irssi/config
@@ -27,14 +29,7 @@ git update-index --assume-unchanged ./irssi/config
 
 For shell colors I use Base 16.
 
-* [Gnome Terminal](https://github.com/aaron-williamson/base16-gnome-terminal)
-
-```sh
-git clone https://github.com/aaron-williamson/base16-gnome-terminal.git ~/.config/base16-gnome-terminal
-.config/base16-gnome-terminal/color-scripts/base16-default-dark.sh
-```
-
-* [Shell](https://github.com/chriskempson/base16-shell)
+* [Base 16 Shell](https://github.com/chriskempson/base16-shell)
 
 ```sh
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
@@ -42,22 +37,21 @@ git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shel
 
 ### Vim
 
-The vim configuration requires Vundle and YouCompleteMe to be installed
-manually.
+The vim configuration requires Plug to be installed manually.
 
-* [Vundle](https://github.com/VundleVim/Vundle.vim)
-* [YouCompleteMe](https://valloric.github.io/YouCompleteMe)
+* [Plug](https://github.com/junegunn/vim-plug)
 
-### Zsh
+Then simply run `:PlugInstall` within vim.
 
-The zsh configuration requires `oh-my-zsh` to be installed manually.
+### Fish
 
-* [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
+You will have to install `fish` via the platforms package manager, and then
+add it to `/etc/shells` and then change your default shell.
 
-
-You'll then have to edit `~/.zshrc` and select a zsh theme. The theme I use can
-be found [here](https://gist.github.com/jhm/57e80b366ee4dc9cb70e) and it needs
-to be placed in the `~/.oh-my-zsh/themes` directory.
+```sh
+echo /usr/local/bin/fish | sudo tee -a /etc/shells
+chsh -s /usr/local/bin/fish
+```
 
 ## License
 
