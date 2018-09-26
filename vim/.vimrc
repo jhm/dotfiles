@@ -56,11 +56,6 @@ call plug#end()
 
 filetype plugin indent on
 
-set ttyfast
-set lazyredraw
-set re=1
-set regexpengine=1
-
 set history=200
 " set timeoutlen=1000 ttimeoutlen=0
 
@@ -76,8 +71,8 @@ set tw=78
 
 " Vimwiki configuration.
 let wiki = {}
-let wiki.path = '~/Notes'
-let wiki.path_html = '~/Notes/public_html/'
+let wiki.path = '~/Documents/Notes'
+let wiki.path_html = '~/Documents/Notes/public_html/'
 let wiki.syntax = 'markdown'
 let wiki.ext = '.md'
 let wiki.nested_syntaxes = {'ruby': 'ruby', 'javascript': 'javascript', 'sh': 'sh'}
