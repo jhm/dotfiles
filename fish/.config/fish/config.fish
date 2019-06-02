@@ -1,3 +1,5 @@
-eval sh $HOME/.config/base16-shell/scripts/base16-default-dark.sh
+eval sh $HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh
 
-set -x PATH $PATH ~/.cargo/bin
+set -xU GOPATH $HOME/Code/scratch/go
+set -xU EDITOR vim
+set -x PATH $PATH $HOME/cargo/bin
