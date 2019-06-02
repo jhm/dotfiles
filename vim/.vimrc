@@ -10,7 +10,12 @@ set clipboard=unnamed
 call plug#begin('~/.vim/plugged')
 
 " Color schemes.
-Plug 'chriskempson/base16-vim'
+function FixupBase16(info)
+  !sed -i '/Base16hi/\! s/a:\(attr\|guisp\)/l:\1/g' ~/.vim/plugged/base16-vim/colors/*.vim
+endfunction
+Plug 'chriskempson/base16-vim', { 'do': function('FixupBase16') }
+
+Plug 'altercation/vim-colors-solarized'
 
 " Sidebar navigation.
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -34,6 +39,9 @@ Plug 'honza/vim-snippets'
 
 " Syntax checking.
 Plug 'scrooloose/syntastic'
+
+" Go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Rust
 Plug 'rust-lang/rust.vim'
@@ -72,12 +80,14 @@ set tw=78
 " Vimwiki configuration.
 let wiki = {}
 let wiki.path = '~/Documents/Notes'
+let wiki.index = 'README'
 let wiki.path_html = '~/Documents/Notes/public_html/'
 let wiki.syntax = 'markdown'
 let wiki.ext = '.md'
 let wiki.nested_syntaxes = {'ruby': 'ruby', 'javascript': 'javascript', 'sh': 'sh'}
 let g:vimwiki_list = [wiki]
-let g:vimwiki_folding='expr'
+let g:vim_markdown_folding_disabled = 1
+" let g:vimwiki_folding='expr'
 
 " Assume POSIX compataible shell for sh scripts.
 let g:is_posix = 1
@@ -128,6 +138,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Save the current buffer.
+nnoremap <leader>w :w<CR>
+
 " Open the quickfix and location list.
 nnoremap <leader>q :copen<CR>
 nnoremap <leader>l :lopen<CR>
@@ -137,7 +150,15 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 
 " Default colorscheme.
 let base16colorspace=256
-colorscheme base16-default-dark
+"set background=light
+colorscheme base16-tomorrow-night
+hi clear LineNR
+hi LineNr ctermfg=238
+
+"set background=light
+" colorscheme base16-solarized-light
+" hi clear LineNR
+" hi LineNr ctermfg=250
 
 set grepprg=ack\ --nogroup\ --column\ $*
 set grepformat=%f:%l:%c:%m
@@ -180,7 +201,11 @@ autocmd FileType ruby,eruby setlocal expandtab shiftwidth=2 tabstop=2 softtabsto
 " Go settings.
 autocmd BufNewFile,BufRead *.go setlocal ft=go
 autocmd FileType go setlocal noexpandtab ts=4 sw=4 sts=4
+autocmd FileType go setlocal nolist
+" listchars=trail:¬,nbsp:·
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 
 " Javascript settings.
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
+
