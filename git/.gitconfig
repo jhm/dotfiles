@@ -18,3 +18,5 @@
     default = simple
 [core]
 	editor = vim
+[init]
+	defaultBranch = main
