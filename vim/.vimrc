@@ -3,19 +3,12 @@ set encoding=utf-8
 " Enable vim specific features.
 set nocompatible
 
-filetype off
-
 set clipboard=unnamed
 
 call plug#begin('~/.vim/plugged')
 
 " Color schemes.
-function FixupBase16(info)
-  !sed -i '/Base16hi/\! s/a:\(attr\|guisp\)/l:\1/g' ~/.vim/plugged/base16-vim/colors/*.vim
-endfunction
-Plug 'chriskempson/base16-vim', { 'do': function('FixupBase16') }
-
-Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
 
 " Sidebar navigation.
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -37,15 +30,8 @@ Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-" Syntax checking.
-Plug 'scrooloose/syntastic'
-
 " Go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-" Rust
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " Typescript
 Plug 'leafgarland/typescript-vim'
@@ -65,7 +51,6 @@ call plug#end()
 filetype plugin indent on
 
 set history=200
-" set timeoutlen=1000 ttimeoutlen=0
 
 " Set backup directory.
 set backupdir=~/.vim/backups
@@ -77,6 +62,8 @@ set backspace=2
 " Set maximum width of a line being inserted.
 set tw=78
 
+set completeopt=longest,menuone
+
 " Vimwiki configuration.
 let wiki = {}
 let wiki.path = '~/Documents/Notes'
@@ -84,10 +71,18 @@ let wiki.index = 'README'
 let wiki.path_html = '~/Documents/Notes/public_html/'
 let wiki.syntax = 'markdown'
 let wiki.ext = '.md'
-let wiki.nested_syntaxes = {'ruby': 'ruby', 'javascript': 'javascript', 'sh': 'sh'}
+let wiki.nested_syntaxes = {'go': 'go', 'ruby': 'ruby', 'javascript': 'javascript', 'sh': 'sh'}
 let g:vimwiki_list = [wiki]
-let g:vim_markdown_folding_disabled = 1
-" let g:vimwiki_folding='expr'
+let g:vimwiki_global_ext = 0
+let g:markdown_folding = 1
+
+augroup myvimwiki
+  autocmd!
+  au BufWinEnter *.md setlocal syntax=markdown
+  au FileType vimwiki setlocal foldlevel=1
+  au FileType vimwiki setlocal foldenable
+  au FileType vimwiki setlocal foldmethod=expr
+augroup END
 
 " Assume POSIX compataible shell for sh scripts.
 let g:is_posix = 1
@@ -97,11 +92,6 @@ set laststatus=2
 
 " Show line numbers.
 set number
-set numberwidth=4
-
-" Enable folding.
-set foldmethod=syntax
-set foldlevel=99
 
 " Default indentation rules.
 set tabstop=2
@@ -117,7 +107,7 @@ set list listchars=tab:».,trail:¬,nbsp:·
 set nojoinspaces
 
 " Highlight current line.
-set cursorline
+" set cursorline
 
 " Enable incremental search.
 set incsearch
@@ -127,6 +117,10 @@ set hlsearch
 
 " Enable syntax highlighting.
 syntax on
+
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
 
 " Adjust leader and localleader keys.
 let mapleader=","
@@ -150,15 +144,11 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 
 " Default colorscheme.
 let base16colorspace=256
-"set background=light
-colorscheme base16-tomorrow-night
+colorscheme base16-gruvbox-dark-hard
+hi clear SignColumn
 hi clear LineNR
 hi LineNr ctermfg=238
-
-"set background=light
-" colorscheme base16-solarized-light
-" hi clear LineNR
-" hi LineNr ctermfg=250
+hi Visual term=reverse cterm=reverse
 
 set grepprg=ack\ --nogroup\ --column\ $*
 set grepformat=%f:%l:%c:%m
@@ -168,11 +158,8 @@ set splitbelow
 set splitright
 
 " Airline settings.
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=0
 let g:airline_theme='base16'
-
-" YCM settings.
-let g:ycm_autoclose_preview_window_after_completion=1
 
 " Ultisnips settings.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -183,29 +170,21 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 nnoremap <leader>t :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.o$']
 
-" Rust settings.
-let g:rustfmt_autosave = 1
+nmap <leader>sp :setlocal spell! spelllang=en_gb<CR>
 
-" Syntastic settings.
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+augroup mylang
+  autocmd!
+  au FileType python setlocal autoindent smarttab formatoptions=croql
+  au FileType ruby,eruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  au BufNewFile,BufRead *.go setlocal ft=go
+  au FileType go setlocal noexpandtab ts=4 sw=4 sts=4
+  au FileType go setlocal nolist
+  au FileType go nmap <Leader>i <Plug>(go-info)
+  au FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+augroup END
 
-" Python settings.
-autocmd FileType python setlocal autoindent smarttab formatoptions=croql
-
-" Ruby settings.
-autocmd FileType ruby,eruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-
-" Go settings.
-autocmd BufNewFile,BufRead *.go setlocal ft=go
-autocmd FileType go setlocal noexpandtab ts=4 sw=4 sts=4
-autocmd FileType go setlocal nolist
-" listchars=trail:¬,nbsp:·
-autocmd FileType go nmap <Leader>i <Plug>(go-info)
-
-" Javascript settings.
-autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-
-
+" Go settings
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_metalinter_autosave = 1
+let g:go_auto_type_info = 1
