@@ -75,13 +75,13 @@ let wiki.nested_syntaxes = {'go': 'go', 'ruby': 'ruby', 'javascript': 'javascrip
 let g:vimwiki_list = [wiki]
 let g:vimwiki_global_ext = 0
 let g:markdown_folding = 1
+set foldlevel=99
 
 augroup myvimwiki
   autocmd!
-  au BufWinEnter *.md setlocal syntax=markdown
-  au FileType vimwiki setlocal foldlevel=1
-  au FileType vimwiki setlocal foldenable
-  au FileType vimwiki setlocal foldmethod=expr
+au BufWinEnter *.md setlocal syntax=markdown
+au FileType vimwiki setlocal foldenable
+au FileType vimwiki setlocal foldmethod=expr
 augroup END
 
 " Assume POSIX compataible shell for sh scripts.
