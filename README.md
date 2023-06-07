@@ -33,16 +33,6 @@ The vim configuration requires Plug to be installed manually.
 
 Then simply run `:PlugInstall` within vim.
 
-### Fish
-
-You will have to install `fish` via the platforms package manager, and then
-add it to `/etc/shells` and then change your default shell.
-
-```sh
-echo /usr/local/bin/fish | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/fish
-```
-
 ## License
 
 MIT. See [LICENSE.txt](https://github.com/jhm/dotfiles/blob/master/LICENSE.txt).
