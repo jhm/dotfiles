@@ -25,16 +25,6 @@ repository.
 git update-index --assume-unchanged ./irssi/config
 ```
 
-### Shell Colors
-
-For shell colors I use Base 16.
-
-* [Base 16 Shell](https://github.com/chriskempson/base16-shell)
-
-```sh
-git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-```
-
 ### Vim
 
 The vim configuration requires Plug to be installed manually.
