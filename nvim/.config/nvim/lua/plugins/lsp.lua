@@ -46,13 +46,14 @@ return {
 					["<C-f>"] = cmp_action.luasnip_jump_forward(),
 					["<C-b>"] = cmp_action.luasnip_jump_backward(),
 				}),
-                sources = cmp.config.sources({
-                    { name = "nvim_lsp", keyword_length = 1 },
-                    { name = "nvim_lsp_signature_help" }, { name = "luasnip" },
-                    { name = "path" },
-                    { name = "buffer" },
-                    { name = "nvim_lua" },
-                }),
+				sources = cmp.config.sources({
+					{ name = "nvim_lsp", keyword_length = 1 },
+					{ name = "nvim_lsp_signature_help" },
+					{ name = "luasnip" },
+					{ name = "path" },
+					{ name = "buffer" },
+					{ name = "nvim_lua" },
+				}),
 			})
 			require("luasnip.loaders.from_vscode").lazy_load()
 		end,
