@@ -1,1 +1,3 @@
-EDITOR="vim"
+EDITOR="nvim"
+
+. "$HOME/.cargo/env"
