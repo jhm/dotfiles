@@ -110,13 +110,20 @@ return {
 				},
 				servers = {
 					["null-ls"] = {
+						"css",
 						"go",
+						"html",
 						"javascript",
 						"javascriptreact",
+						"json",
+						"jsonc",
 						"lua",
+						"markdown",
+						"markdown.mdx",
 						"python",
 						"typescript",
 						"typescriptreact",
+						"vue",
 					},
 				},
 			})
