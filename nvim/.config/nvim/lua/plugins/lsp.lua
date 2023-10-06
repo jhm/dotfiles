@@ -75,8 +75,14 @@ return {
 
 			lsp_zero.on_attach(function(_, bufnr)
 				local opts = { buffer = bufnr, remap = false }
+				vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+				vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+				vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 				vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 				vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+				vim.keymap.set("n", "<f2>", vim.lsp.buf.rename, opts)
+				vim.keymap.set("n", "<f4>", vim.lsp.buf.code_action, opts)
 			end)
 
 			require("mason-lspconfig").setup({
