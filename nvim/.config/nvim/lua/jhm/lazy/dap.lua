@@ -37,7 +37,5 @@ return {
 
 		-- Install golang specific config
 		require("dap-go").setup()
-
-		--vim.api.nvim_create_autocmd({"go"}
 	end,
 }
