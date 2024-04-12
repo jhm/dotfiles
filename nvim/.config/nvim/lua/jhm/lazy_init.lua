@@ -11,8 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = ","
-
-require("lazy").setup("plugins")
-require("core.settings")
-require("core.keymap")
+require("lazy").setup({
+	spec = "jhm.lazy",
+})
