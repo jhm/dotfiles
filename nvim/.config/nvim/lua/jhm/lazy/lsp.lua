@@ -31,7 +31,7 @@ return {
 				"gopls",
 				"lua_ls",
 				"pyright",
-				"rust_analyzer",
+				-- "rust_analyzer",
 				"tsserver",
 			},
 			handlers = {
@@ -51,6 +51,22 @@ return {
 								diagnostics = {
 									globals = { "vim", "it", "describe", "before_each", "after_each" },
 								},
+							},
+						},
+					})
+				end,
+				["rust_analyzer"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.rust_analyzer.setup({
+						settings = {
+							["rust-analyzer"] = {
+								cargo = { all_features = true },
+								check = {
+									enable = true,
+									command = "clippy",
+									features = "all",
+								},
+								checkOnSave = true,
 							},
 						},
 					})
