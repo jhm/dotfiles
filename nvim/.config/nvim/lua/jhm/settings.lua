@@ -18,7 +18,7 @@ o.smartindent = true
 
 o.wrap = false
 o.tw = 80
-o.colorcolumn = "80"
+o.colorcolumn = "100"
 o.signcolumn = "yes"
 
 o.scrolloff = 8
