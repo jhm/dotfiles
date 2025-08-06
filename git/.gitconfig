@@ -17,6 +17,6 @@
 [push]
     default = simple
 [core]
-	editor = vim
+	editor = helix
 [init]
 	defaultBranch = main
