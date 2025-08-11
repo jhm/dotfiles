@@ -1,0 +1,26 @@
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "Consolas"
+style = "Bold"
+
+[font.bold_italic]
+family = "Consolas"
+style = "Bold Italic"
+
+[font.italic]
+family = "Consolas"
+style = "Italic"
+
+[font.normal]
+family = "Consolas"
+style = "Regular"
+
+[general]
+import = [
+    "~/.config/alacritty/jellybeans.toml",
+]
