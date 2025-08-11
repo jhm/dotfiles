@@ -1,0 +1,23 @@
+font-family = "Iosevka"
+font-size = 14
+
+theme = "Jellybeans"
+
+keybind = ctrl+space>h=goto_split:left
+keybind = ctrl+space>j=goto_split:bottom
+keybind = ctrl+space>k=goto_split:top
+keybind = ctrl+space>l=goto_split:right
+
+keybind = ctrl+space>v=new_split:right
+keybind = ctrl+space>s=new_split:down
+# keybind = ctrl+space>k=new_split:up
+# keybind = ctrl+space>l=new_split:right
+# keybind = ctrl+space>f=toggle_split_zoom
+
+keybind = ctrl+space>c=new_tab
+keybind = ctrl+space>n=next_tab
+keybind = ctrl+space>p=previous_tab
+
+keybind = super+r=reload_config
+
+window-save-state = always
