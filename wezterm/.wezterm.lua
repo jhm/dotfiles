@@ -8,12 +8,22 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.color_scheme = 'Everblush (Gogh)'
+config.color_scheme = 'Jellybeans'
+-- config.color_scheme = 'Everblush (Gogh)'
+
+-- config.font = wezterm.font 'Consolas'
+-- config.font = wezterm.font 'Source Code Pro'
 config.font = wezterm.font 'JetBrains Mono'
+-- config.font = wezterm.font 'Fira Mono'
+-- config.font = wezterm.font 'Monaspace Neon'
+-- config.font = wezterm.font 'Iosevka'
+-- config.font = wezterm.font 'Droid Sans Mono'
 config.font_size = 14
 
 -- Tabs
 config.enable_tab_bar = false
+-- config.hide_tab_bar_if_only_one_tab = true
+-- config.use_fancy_tab_bar = false
 
 config.window_padding = {
   left = 2,
@@ -120,4 +130,30 @@ for i = 1, 9 do
   })
 end
 
+-- function tab_title(tab_info)
+--   local title = tab_info.tab_title
+--   if title and #title > 0 then
+--     return title
+--   end
+--   return tab_info.active_pane.title
+-- end
+
+-- wezterm.on(
+--   'format-tab-title',
+--   function(tab, tabs, panes, config, hover, max_width)
+--     local title = wezterm.truncate_right(tab_title(tab), max_width - 2)
+--     if tab.is_active then 
+--       return {
+--         { Background = { Color = '#1F2430' } },
+--         { Text = ' ' .. title .. ' ' },
+--       }
+--     end
+--     return {
+--         { Background = { Color = '#171B24' } },
+--         { Text = ' ' .. title .. ' ' },
+--     }
+--   end
+-- )
+
+-- and finally, return the configuration to wezterm
 return config
