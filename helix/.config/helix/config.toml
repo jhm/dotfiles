@@ -1,0 +1,23 @@
+theme = "everblush"
+
+[editor]
+line-number = "relative"
+rulers = [ 100 ]
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+# [editor.indent-guides]
+# render = true
+# character = "┊" # Some characters that work well: "▏", "┆", "┊", "⸽"skip-levels = 1
+# skip-levels = 1
+
+[keys.insert]
+"C-[" = "normal_mode"
+
+[keys.normal]
+"C-[" = "normal_mode"
+
+[keys.select]
+"C-[" = "normal_mode"
