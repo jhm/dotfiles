@@ -1,4 +1,4 @@
-theme = "everblush"
+theme = "my-gruvbox"
 
 [editor]
 line-number = "relative"
