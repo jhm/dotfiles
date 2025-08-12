@@ -1,4 +1,6 @@
-# Config for sway
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
 
@@ -16,7 +18,7 @@ set $term wezterm
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu bemenu-run | xargs swaymsg exec --
+set $menu bemenu-run --list 30 --no-exec --line-height 30 | xargs swaymsg exec --
 
 ### Output configuration
 #
@@ -223,7 +225,7 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 #
 # gaps inner 0
 # smart_gaps 0
-# default_border pixel 3
+default_border pixel 4
 smart_borders on
 
 #
@@ -231,8 +233,10 @@ smart_borders on
 #
 font pango:Source Code Pro 10
 
-client.focused "#475258" "#475258" "#d3c6aa"
-client.unfocused "#000000" "#000000" "#475258"
+# <border> <background> <text> <indicator> <child_border>
+client.focused "#83a598" "#83a598" "#1d2021" "#fe8019"
+client.unfocused "#1d2021" "#000000" "#475258" "#fe8019"
+client.focused_inactive "#000000" "#000000" "#475258" "#000000"
 
 #
 # Status Bar:
